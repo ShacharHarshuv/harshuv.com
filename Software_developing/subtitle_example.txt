@@ -1,0 +1,17 @@
+This is an example subtitle file. 
+
+This is the second line
+
+This is a line
+with a break
+
+See - it's easy!
+
+Don't forget to put 
+extra space at the end
+
+or the software will not 
+detect the last slide
+
+Good Luck!
+

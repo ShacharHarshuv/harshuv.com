@@ -1,0 +1,59 @@
+body{
+    font-size: 18px;
+    background: #222;
+    color: white;
+}
+h1{
+    font-size: 5rem;
+    text-align: center;
+}
+h2{
+    font-size: 3.5rem;
+    text-align: center;
+}
+h1, h2, h3, h4{
+    margin-bottom: 2rem;
+}
+
+hr{
+    margin: 2rem 0;
+}
+img, iframe{
+    width: 100%;
+    max-width: 500px;
+}
+
+.carousel-inner{
+    box-shadow: 2px 2px 20px black;
+    border-radius: 1.5em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.carousel-item img{
+    width: 100%;
+    margin: 0;
+    max-width: none;
+}
+
+.carousel-caption{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.carousel-caption h1{
+    text-shadow: 1px 1px 2px black;
+}
+
+@media (max-width: 992px){
+    body{font-size: 18px;}
+}
+@media (max-width: 768px){
+    body{font-size: 16px;}
+    h1 {font-size: 4rem;}
+}
+@media (max-width: 576px){
+    body{font-size: 14px;}
+    h1{font-size: 2.5rem;}
+    
+}
+

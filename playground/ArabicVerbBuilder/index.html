@@ -1,0 +1,137 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+        <title>Arabic Verb Builder</title>
+        
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+    </head>
+    <body>
+        <h1 class="text-center">Arabic Verb Builder - الفعل العربي</h1>
+
+        <form class="form form-horizontal">
+            <!--Form-->
+            <div class="form-group row">
+                <label for="form" class="col-form-label-lg col-sm-3">Form: </label>
+                <select id="form" class="form-control form-control-lg col-sm-9">
+                    <option value="1">1 فَعَلَ</option>
+                    <option value="2">2 فَعَّلَ</option>
+                    <option value="3">3 فَاعَلَ</option>
+                    <option value="4">4 أفْعَلَ</option>
+                    <option value="5">5 تَفَعَّلَ</option>
+                    <option value="6">6 تَفَاعَلَ</option>
+                    <option value="7">7 إِنْفَعَلَ</option>
+                    <option value="8">8 إفْتَعَلَ</option>
+                    <option value="9">9 إفْعَلَّ</option>
+                    <option value="10">10 إِسْتِفْعَلَ</option>
+                </select>
+            </div>
+            <!--Root-->
+            <div class="form-group row">
+                <label for="root" class="col-form-label-lg col-sm-3">Root:</label>
+                <div class="col-sm-3" style="padding-right: 4px; padding-left: 0px;">
+                    <select id="vowel" class="form-control form-control-lg" >
+                        <option value="fatha">-َ</option>
+                        <option value="kasra">-ِ</option>-َ</option>
+                        <option value="damma">-ُ</option>
+                    </select>
+                </div>
+                <input id="root" class="form-control form-control-lg col-sm-6" type="text" dir="rtl" value="كتب" align="right">
+            </div>
+            <!--Mood-->
+            <div class="form-group row">
+                <label for="mood" class="col-form-label-lg col-sm-3">Mood:</label>
+                <select id="mood" class="form-control form-control-lg col-sm-9">
+                    <option value="past">Past - الماضي</option>
+                    <option value="non-past">Non-Past - المضاري</option>
+                    <option value="non-past">Non-Past - المضاري</option>
+                    <option value="non-past-maj">Non-Past (Majzoom) - المضاري المجزوم</option>
+                    <option value="non-past-man">Non-Past (Mantsub) - المضاري المنصوب</option>  
+                    <option value="imperative">Imperative  - الأمر</option>
+                    <option value="agent-active">Agent Active - اسم الفاعل</option>
+                    <option value="agent-passive">Agent Passive - اسم المفاعل</option>
+                    <option value="infinitive">Infinitive - المصدر</option>
+                </select>
+            </div>
+            <!--is vowel of Ein elfiel in the past is kasra-->
+            <div class="form-group row" id="isKasradiv">    
+                <div class="col-sm-12">
+                    <div class="custom-control custom-checkbox">
+                        <input id="isKasra" class="custom-control-input" type="checkbox">
+                        <label class="custom-control-label" for="isKasra">The vowel of ع الفعل in the past tense is Kasra (-ِ)</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-form-label-lg col-sm-4">Pronoun:</label>
+                <select id="pronoun" class="form-control form-control-lg col-sm-8" dir="rtl">
+                    <option value="I">أنا</option>
+                    <option value="ms_you">أنتَ</option>
+                    <option value="fs_you">أنتِ</option>
+                    <option value="he">هو</option>
+                    <option value="she">هي</option>
+                    <option value="d_you">أنتما</option>
+                    <option value="md_they">هما (ذكر)</option>
+                    <option value="fd_they">هما (أنثى)</option>
+                    <option value="we">نحن</option>
+                    <option value="mp_you">أنتم</option>
+                    <option value="fp_you">أنتن</option>
+                    <option value="m_they">هم</option>
+                    <option value="f_they">هن</option>
+                </select>
+                
+            </div>
+
+            <div id="fornouns">
+                <p>For noun forms: (optional) </p>
+                <div class="form-group row">
+                    <label for="case" class="col-form-label-lg col-sm-3">Case: </label>
+                    <select id="case" class="form-control form-control-lg col-sm-9">
+                        <option value="nominative">Nominative - مرفوع </option>
+                        <option value="accusative">Accusative - المنصوب </option>
+                        <option value="genitive">Genitive - المجرور </option>
+                    </select>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <div class="custom-control custom-checkbox" >
+                            <input id="known" class="custom-control-input" type="checkbox" ></input>
+                            <label class="custom-control-label" for="known">Known ("The")</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+
+            <div class="row">
+                <input type="button" id="buildbutton" class="btn btn-primary" value="Build!" >
+            </div>
+            <div class="row">
+                <div id="result">الفعل</div>
+            </div>
+            
+            <div class="row">
+                <div class="center">&copy; Shachar Har-Shuv</div>
+            </div>
+
+            
+
+        </form>
+
+        <!--JQuery-->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <!--my scripts-->
+        <script src="scripts/Letter.js"></script>
+        <script src="scripts/test.js"></script>
+        <script src="scripts/verbbuilder.js"></script>
+        <script src="scripts/events.js"></script>
+
+    </body>
+</html>
